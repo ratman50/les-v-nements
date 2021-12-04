@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .terrain {
+            margin: 10px auto;
+            border: 5px solid;
+            height: 250px;
+            width: 250px;
+            background-color: rgb(33, 80, 33);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .terrain div {
+            font-size: 3.2rem;
+
+            /* position: absolute; */
+            transition: all 1s linear;
+        }
+
+        .container-drop .dropDown {
+
+            cursor: pointer;
+        }
+
+        .container-drop .fa-caret-right {
+            transition: all 0.5s linear;
+            font-size: 1.6rem;
+            padding-right: 3px;
+            color: greenyellow;
+        }
+
+
+
+        .container-box {
+            border: 1px solid;
+            width: 50%;
+
+            margin: 2em auto;
+        }
+
+        .container-box .content {
+            margin: 0 8em;
+        }
+
+
+        .container-box .content .box {
+            text-align: justify;
+            background-color: lightgray;
+            border-top: 2px solid rgb(84, 136, 5);
+            margin-top: 0px;
+            position: relative;
+        }
+        .container-box .content .box .fa-times-circle
+        {
+            font-size: 1.8rem;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            cursor: pointer;
+        }
+        .container-box .content .box .fa-times-circle:hover
+        {
+            color: crimson;
+        }
+
+
+        .container-image
+        {
+            /* margin: 0 auto; */
+            width: 400px;
+            height: 160px;
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            
+            /* background-color: lightgrey; */
+        }
+        
+        .container-image .image
+        {
+            width: 100%;
+            margin: 2em ;
+            text-align: center;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .container-image .image img
+        {
+            width: 100px;
+            height: 100px;
+            padding: 0 5px;
+            border-radius: 50%;
+            box-shadow: 3px 2px 3px black;
+        }
+        .fa-chevron-circle-left,.fa-chevron-circle-right
+        {
+             font-size: 1.5rem;
+             cursor: pointer;
+        }
+        .active
+        {
+            color: lightslategrey;
+            cursor: auto;
+            /* background: lightslategrey; */
+        }
+        .fa-chevron-circle-left
+        {
+            left: 0px;
+        }
+        .fa-chevron-circle-right
+        {
+            right: 0;
+        }
+        .inner{
+            display: flex;
+            border: 2px solid;
+            justify-content: center ;
+            align-items: center;
+            width: 35%;
+            border-radius: 12px;
+            margin: 0 auto;        }
+            
+            </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <button type="button" id="button" value=" ">click on me to hide the text</button>
+        <p class="text">text</p>
+        <button id="btn" type="button" onclick="this.hidden=true">click to hide</button>
+    </div>
+
+
+    <div class="terrain">
+        <div class="far fa-futbol"></div>
+        <p class="underscore"></p>
+    </div>
+    <div class="container-drop">
+        <div class="dropDown"> <i class="fas fa-caret-right"></i>Sweeties(click me)</div>
+        <div class="dropDown-item" hidden="true">
+            <p>Cake</p>
+            <p>Donut</p>
+            <p>Honey</p>
+        </div>
+    </div>
+
+    <div class="container-box">
+        <div class="content">
+
+            <div class="box box1">
+                <i class="i1 far fa-times-circle"></i>
+                <h2>Horse</h2>
+                <p>The horse is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal belonging
+                    to the taxonomic family Equidae. The horse has evolved over the past 45 to 55 million years from a
+                    small multi-toed creature, Eohippus, into the large, single-toed animal of today.</p>
+            </div>
+            <div class="box box2">
+                <i class="i2 far fa-times-circle"></i>
+                <h2>Donkey</h2>
+                <p>The donkey or ass (Equus africanus asinus) is a domesticated member of the horse family, Equidae. The
+                    wild ancestor of the donkey is the African wild ass, E. africanus. The donkey has been used as a
+                    working animal for at least 5000 years.</p>
+            </div>
+            <div class="box box2">
+                <i class="i3 far fa-times-circle"></i>
+                <h2>Cat</h2>
+                <p>The domestic cat (Latin: Felis catus) is a small, typically furry, carnivorous mammal. They are often
+                    called house cats when kept as indoor pets or simply cats when there is no need to distinguish them
+                    from other felids and felines. Cats are often valued by humans for companionship and for their
+                    ability to hunt vermin. </p>
+            </div>
+        </div>
+    </div>
+    <div class="inner">
+
+        <i class="fas fa-chevron-circle-left"></i>
+        <div class="container-image">
+            <div class="image">
+                <img src="images/toph1.jpg" alt="">
+                <img src="images/toph2.jpg" alt="">
+                <img src="images/toph3.jpg" alt="">
+            </div>
+            <div class="image">
+                <img src="images/toph4.jpg" alt="">
+                <img src="images/toph5.jpg" alt="">
+                <img src="images/toph6.jpg" alt="">
+            </div>
+            <div class="image">
+                <img src="images/toph7.jpg" alt="">
+                <img src="images/toph8.jpg" alt="">
+                <img src="images/toph9.jpg" alt="">
+            </div>
+            
+        </div>
+        <i class="fas fa-chevron-circle-right"></i>
+    </div>
+
+    <script>
+        button.addEventListener("click", () => {
+            document.querySelector(".text").style.display = "none";
+        })
+
+
+        let field = document.querySelector(".terrain");
+        let ball = document.querySelector(".far");
+
+        field.addEventListener("click", (event) => {
+            let xBall = ball.getBoundingClientRect().x;
+            let yBall = ball.getBoundingClientRect().y;
+            let xCursor = event.clientX, yCursor = event.clientY;
+            let xField = field.getBoundingClientRect().x, yField = field.getBoundingClientRect().y;
+            let diffX = xCursor - xField - field.clientLeft - ball.offsetWidth / 2;
+            let diffY = yCursor - yField - field.clientTop - ball.offsetHeight / 2;
+            // ball.style.left=diffX+"px";
+            // ball.style.top =diffY+"px";
+            ball.style.transform = "translate(" + diffX + "px," + diffY + "px)";
+
+
+        })
+
+
+        let caret_right = document.querySelector(".fa-caret-right");
+        let dropDown = document.querySelector(".dropDown");
+        let item = document.querySelector(".dropDown-item")
+        let click = 1;
+        function handler() {
+            caret_right.style.transform = "rotate(90deg)";
+            item.hidden = "";
+            if (click % 2 == 0) {
+                caret_right.style.transform = "rotate(0deg)";
+                item.hidden = "true";
+
+
+            }
+            click++;
+            // console.dir(item)
+        }
+        dropDown.addEventListener("click", handler)
+
+
+
+        let tabIcon=document.querySelectorAll(".box >i ");
+        let tabbox=document.querySelectorAll(".box")
+        let i=0;
+        for(let key of tabIcon)
+        {
+            key.addEventListener("click",()=>{               
+                    key.parentElement.hidden="true";
+               
+            })    
+        }
+        // console.log(tabIcon);
+
+
+        let chevronLeft=document.querySelector(".fa-chevron-circle-left");
+        let chevronRight=document.querySelector(" .fa-chevron-circle-right");
+        let containImage=document.querySelector(".container-image")
+        
+        console.log("hello")
+        chevronRight.addEventListener("click",()=>{
+            chevronLeft.classList.remove("active")
+
+            containImage.scrollLeft+=containImage.offsetWidth;
+            if(containImage.scrollLeft>382 )
+            {
+                chevronRight.classList.add("active")
+
+            }
+            else
+                chevronRight.classList.remove("active")
+            console.log(containImage.offsetWidth*3);
+        })
+        chevronLeft.addEventListener("click",()=>{
+            chevronRight.classList.remove("active")
+
+            if(containImage.scrollLeft==0)
+                chevronLeft.classList.add("active");
+            else
+                 chevronLeft.classList.remove("active")
+            containImage.scrollLeft-=containImage.offsetWidth;
+            console.log(containImage.scrollLeft);
+        })
+        if(containImage.scrollLeft==0)
+            chevronLeft.classList.add("active");
+        // else
+            // chevronLeft.classList.remove("active")
+        // console.log(containImage);
+
+    </script>
+</body>
+
+</html>
